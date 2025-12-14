@@ -877,7 +877,7 @@ private byte[] takeScreenshot(String name) {
 
     private List<WebElement> findValidationErrors() {
         return driver.findElements(By.cssSelector(
-                ". error:not([style*='display: none']), " +
+                ".error:not([style*='display: none']), " +
                         ".invalid-feedback:not([style*='display: none']), " +
                         ".text-danger:not([style*='display: none']), " +
                         ".alert-danger:not([style*='display: none']), " +
