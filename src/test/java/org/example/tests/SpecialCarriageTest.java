@@ -5,6 +5,7 @@ import org.example.pages.SpecialCarriagePage;
 import org.example.utils.WebSearchHelper;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome. ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -32,7 +33,22 @@ public class SpecialCarriageTest {
     @BeforeMethod
     public void setup() {
         System.out. println("\n🚀 Ініціалізація WebDriver.. .");
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+
+        // 2. Вмикаємо режим "без голови" (обов'язково для GitHub Actions)
+        options.addArguments("--headless=new");
+
+        // 3. Задаємо розмір екрану (бо без вікна він може бути 800x600, що зламає верстку)
+        options.addArguments("--window-size=1920,1080");
+
+        // 4. Додаткові опції для стабільності в Docker/Linux
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+
+        // 5. Передаємо опції в драйвер
+        driver = new ChromeDriver(options);
+//        driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         specialCarriagePage = new SpecialCarriagePage(driver);
