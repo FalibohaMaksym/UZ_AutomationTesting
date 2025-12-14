@@ -1,6 +1,6 @@
 package org.example.tests;
 
-import jdk.jfr.Description;
+import io.qameta.allure.Description;
 import org.example.pages.BasePage;
 import org.example.pages.SpecialCarriagePage;
 import org.openqa.selenium.By;
@@ -8,6 +8,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa. selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng. annotations.*;
 import org.testng.asserts.SoftAssert;
 
@@ -31,7 +32,22 @@ public class SpecialCarriageUsabilityTest {
     @BeforeMethod
     public void setup() {
         System.out.println("\n🚀 Ініціалізація WebDriver.. .");
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+
+        // 2. Вмикаємо режим "без голови" (обов'язково для GitHub Actions)
+        options.addArguments("--headless=new");
+
+        // 3. Задаємо розмір екрану (бо без вікна він може бути 800x600, що зламає верстку)
+        options.addArguments("--window-size=1920,1080");
+
+        // 4. Додаткові опції для стабільності в Docker/Linux
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+
+        // 5. Передаємо опції в драйвер
+        driver = new ChromeDriver(options);
+//        driver = new ChromeDriver();
         specialCarriagePage = new SpecialCarriagePage(driver);
         softAssert = new SoftAssert();
         System.out.println("✓ WebDriver ініціалізовано успішно");

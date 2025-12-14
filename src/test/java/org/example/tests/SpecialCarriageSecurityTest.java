@@ -1,6 +1,6 @@
 package org.example. tests;
 
-import jdk.jfr.Description;
+import io.qameta.allure.Description;
 import org.example.pages.SpecialCarriagePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
