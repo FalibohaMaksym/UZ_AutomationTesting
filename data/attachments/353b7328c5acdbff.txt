@@ -1,9 +1,0 @@
-element click intercepted: Element <input name="date" type="text" autocomplete="off" placeholder="Оберіть дату" value="" class="form-input form-input-date"> is not clickable at point (391, 230). Other element would receive the click: <table class="mx-table mx-table-date">...</table>
-  (Session info: chrome=143.0.7499.40)
-Build info: version: '4.39.0', revision: '126f156aee'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.11.0-1018-azure', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1eaedb1eba49429efb720037675bcf10, clickElement {id=f.26E6594AAB8968649AB18A16D267533D.d.D2AE4867CFB1122F2BFF83588419E731.e.37}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:36037}, goog:processID: 2486, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:36037/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on linux (1eaedb1eba49429efb720037675bcf10)] -> xpath: //label[contains(text(), 'Дата видачі')]/ancestor::div[contains(@class,'form-group')]//input]
-Session ID: 1eaedb1eba49429efb720037675bcf10
