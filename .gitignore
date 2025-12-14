@@ -1,0 +1,33 @@
+# --- Maven (Збірка проекту) ---
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+# --- IntelliJ IDEA (Налаштування редактора) ---
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# --- Java (Скомпільовані класи та логи) ---
+*.class
+*.log
+*.ctxt
+.mtj.tmp/
+
+# --- Allure (Звіти та результати) ---
+# Ми ігноруємо їх, бо вони генеруються автоматично.
+# У нас для цього є GitHub Actions.
+allure-results/
+allure-report/
+gen/
+
+# --- System (Системні файли ОС) ---
+.DS_Store
+Thumbs.db
