@@ -3,7 +3,7 @@
 <suite name="Special Carriage Test Suite" verbose="1">
     <test name="Form Tests">
         <classes>
-            <class name="org.example.tests.SpecialCarriageTest"/>
+            <class name="org.example.tests.SpecialCarriageValidationTest"/>
         </classes>
     </test>
 </suite>
