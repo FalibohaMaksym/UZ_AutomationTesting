@@ -64,7 +64,12 @@ public class SpecialCarriageSecurityTest {
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-gpu");
+        options.addArguments("--ignore-certificate-errors"); // Ігнорувати SSL помилки
+        options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--remote-allow-origins=*");
 
+        // Найголовніше: Прикидаємось звичайним браузером Windows
+        options.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
         // 5. Передаємо опції в драйвер
         driver = new ChromeDriver(options);
 //        driver = new EdgeDriver();
