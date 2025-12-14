@@ -518,7 +518,7 @@ private byte[] takeScreenshot(String name) {
     public void testEachRequiredFieldIndividually() {
         System.out.println("\n" + "=".repeat(60));
         System.out.println("ТЕСТ 4: Перевірка кожного обов'язкового поля окремо");
-        System.out. println("=".repeat(60));
+        System.out.println("=".repeat(60));
 
         String[][] requiredFields = {
                 {"enteredLastnameContact", "Прізвище контакту", "text"},
@@ -549,7 +549,7 @@ private byte[] takeScreenshot(String name) {
 
             int finalTestNumber = testNumber;
             boolean fieldPassed = step("Тест 4." + testNumber + ": Перевірка поля '" + fieldName + "'", () -> {
-                System.out. println("\n🧪 Тест 4." + finalTestNumber + ": Перевірка поля '" + fieldName + "'");
+                System.out.println("\n🧪 Тест 4." + finalTestNumber + ": Перевірка поля '" + fieldName + "'");
 
                 specialCarriagePage.open();
                 fillAllFieldsExcept(field[0]);
@@ -560,7 +560,7 @@ private byte[] takeScreenshot(String name) {
                         "arguments[0].scrollIntoView({block: 'center'});", submitButton);
 
                 try {
-                    Thread. sleep(500);
+                    Thread.sleep(500);
                     submitButton.click();
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
@@ -568,7 +568,7 @@ private byte[] takeScreenshot(String name) {
                 }
 
                 String currentUrl = driver.getCurrentUrl();
-                boolean stayedOnPage = currentUrl. contains("special-carriage") && !currentUrl.contains("success");
+                boolean stayedOnPage = currentUrl.contains("special-carriage") && !currentUrl.contains("success");
 
                 if (stayedOnPage) {
                     System.out.println("  ✓ Форма не відправилась без поля '" + fieldName + "' (правильно)");
@@ -583,7 +583,7 @@ private byte[] takeScreenshot(String name) {
 
             if (fieldPassed) {
                 passed++;
-                resultsBuilder. append(String.format("| %d | %s | НЕ відправилась | ✓ |\n", testNumber, fieldName));
+                resultsBuilder.append(String.format("| %d | %s | НЕ відправилась | ✓ |\n", testNumber, fieldName));
             } else {
                 failed++;
                 resultsBuilder.append(String.format("| %d | %s | Відправилась | ❌ |\n", testNumber, fieldName));
@@ -603,7 +603,7 @@ private byte[] takeScreenshot(String name) {
                         "| Всього полів перевірено | %d |\n" +
                         "| Пройшли перевірку | %d |\n" +
                         "| Не пройшли перевірку | %d |\n" +
-                        "| Успішність | %. 1f%% |",
+                        "| Успішність | %.1f%% |",
                 requiredFields.length, passed, failed,
                 (passed * 100.0 / requiredFields.length)
         );
@@ -615,8 +615,8 @@ private byte[] takeScreenshot(String name) {
         System.out.println("  Пройшли:  " + passed + "/" + requiredFields.length);
         System.out.println("  Не пройшли: " + failed + "/" + requiredFields.length);
         System.out.println("  Успішність: " + String.format("%.1f", (passed * 100.0 / requiredFields.length)) + "%");
-        System.out. println("✓ ТЕСТ 4 ЗАВЕРШЕНО");
-        System.out. println("=".repeat(60));
+        System.out.println("✓ ТЕСТ 4 ЗАВЕРШЕНО");
+        System.out.println("=".repeat(60));
 
         softAssert.assertAll();
     }
