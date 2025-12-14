@@ -881,7 +881,7 @@ private byte[] takeScreenshot(String name) {
                         ".invalid-feedback:not([style*='display: none']), " +
                         ".text-danger:not([style*='display: none']), " +
                         ".alert-danger:not([style*='display: none']), " +
-                        ".help-block. error:not([style*='display: none']), " +
+                        ".help-block.error:not([style*='display: none']), " +
                         "[class*='error']:not([style*='display: none'])"
         ));
     }
